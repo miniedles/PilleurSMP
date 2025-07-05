@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSMP Member</title>
+  <style>
+    @font-face {
+      font-family: 'Minecraft';
+      src: url('fonts/Minecraft.woff2') format('woff2'),
+           url('fonts/Minecraft.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  h1 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  letter-spacing: 2px; 
+  }
+
+  p {
+  font-size: 1.1em;
+  margin: 10px 0;
+  letter-spacing: 1px;
+  }
+
+ body {
+   margin: 0;
+   min-height: 100vh;
+   background: linear-gradient(to bottom, #1a1a1a, #4d4d4d, #1a1a1a);
+   color: white;
+   text-align: center;
+   font-family: 'Minecraft', sans-serif;
+   padding: 40px 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+    .image-box {
+      background-color: transparent;
+      padding: 20px;
+      max-width: 1300px;
+    }
+
+.image-box img {
+  width: 100%;       
+  max-width: 800px;  
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+ h1 {
+   font-size: 1.8em;
+    margin-bottom: 10px;
+   letter-spacing: 1.5px;
+ }
+
+ p {
+   margin: 10px 0;
+ }
+
+ .buttons {
+   margin-top: 20px;
+  }
+
+ .button {
+   background-color: black;
+   color: white;
+   border: none;
+   padding: 12px 24px;
+   margin: 10px 8px;
+   font-size: 1em;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background 0.3s, color 0.3s;
+    font-family: 'Minecraft', sans-serif;
+ }
+
+ .button:hover,
+ .button.active {
+   background-color: white;
+   color: black;
+ }
+  
+  #grass-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.grass-block {
+  position: absolute;
+  background-image: url('images/grass-block.png'); 
+  background-size: cover;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.tutorial-container {
+   font-family: 'Minecraft', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.tutorial-container a.pdf-link {
+  color: #838383;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #838383;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Minecraft', sans-serif;
+}
+
+.tutorial-container a.pdf-link:hover {
+  background-color: #838383;
+  color: black;
+}
+
+.tutorial-description {
+  max-width: 400px;
+  font-size: 20px;
+  color: #e0e0e0;
+  font-family: 'Minecraft', sans-serif;
+}
+
+#mediaContent img {
+  display: block;
+  max-width: 300px;
+  margin: 10px auto; 
+}
+
+
+ .media-button {
+   background-color: #838383;
+   border: none;
+   padding: 10px 20px;
+  font-size: 16px;
+   font-family: 'Minecraft', sans-serif;
+   cursor: pointer;
+   border-radius: 8px;
+ }
+
+img:not(.image-box img) {
+  max-width: 300px;
+}
+
+
+ video {
+   max-width: 100%;
+   height: auto;
+    margin: 10px 0;
+  }
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  width: 50px; /* Adjust size here */
+  height: 50px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#backToTop:hover {
+  opacity: 0.7;
+}
+
+
+#backToTop:hover {
+  background-color: white;
+  color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="image-box">
+    <img src="images/banner.png" alt="Pilleur SMP Banner" />
+  </div>
+ 
+  <h1 style="font-size: 60px;">Haiii guys this is the Members Site</h1>
+  <p style="font-size: 30px; margin-bottom: 50px; margin-top: 50px;">Here you can find our images or videos!</p>
+  <p style="font-size: 30px; margin-bottom: 50px;">Plus tutorials about the server because y'all a bit stewpid..</p>
+
+<div class="buttons">
+  <button class="media-button" style="font-size: 50px; color: #e0e0e0;" onclick="showSection('mediaContent')">Images and Videos</button>
+  <button class="media-button" style="font-size: 50px; color: #e0e0e0;" onclick="showSection('tutorialsContent')">Tutorials</button>
+</div>
+
+<div id="mediaContent" class="media-section">
+  <h2 style="font-size:50px"> Images and Videos</h2>
+  <hr style="border: none; height: 2px; background-color: white; width: 100%; margin: 20px auto;">
+
+  <p style="font-size:30px"> Mira Drawing by Kyle</p>
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/chibimirabykyle.png" alt="Art">
+
+  <p style="font-size:30px"> Omid Drawing by Kris</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/duckybykris.png" alt="Art">
+
+  <p style="font-size:30px"> Omid Drawing by Kyle </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/duckycutebykyle.png" alt="Art">
+
+  <p style="font-size:30px"> Gregoriah Drawing by Sparrow</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/gregartbysparrow.png" alt="Art">
+
+  <p style="font-size:30px"> Kris Drawing by Kyle</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/krisbykyle.png" alt="Art">
+
+  <p style="font-size:30px">Minie and Omid Video by Kyle</p>
+    <video controls>
+    <source src="images/gotsmthtotellyoumemekyle.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="margin-bottom: 80px"></p>
+
+  <p style="font-size:30px"> Gregoriah Drawing by Kris</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/krisgregdrawing.png" alt="Art">
+
+  <p style="font-size:30px"> Kris Drawing by Kyle</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/krisportbykyle.png" alt="Art">
+
+  <p style="font-size:30px"> Minie Drawing by Kris</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/miniebykris.png" alt="Art">
+
+  <p style="font-size:30px"> Minie Drawing by Kyle </p>  
+  <img style="max-width: 600px" src="images/miniecmdblockbykyle.png" alt="Art">
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/miniecmdblockredbykyle.png" alt="Art">
+
+  <p style="font-size:30px; margin-bottom: 80px;">Papa Video of Gregoriah and Pwops by Kris</p>
+  <video controls>
+    <source src="images/krispapavideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="margin-bottom: 80px"></p>
+
+  <p style="font-size:30px"> Nicholas Drawing by Sal </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/nicholasfullbodbynich.png" alt="Art">
+
+   <p style="font-size:30px"> Sali Drawing by Kris </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/salibykris.png" alt="Art">
+
+   <p style="font-size:30px"> The Royals Drawing by Kris</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/theroyalsbykris.png" alt="Art">
+
+   <p style="font-size:30px"> Minie Drawing by Kris</p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/miniebykris.png" alt="Art">
+
+   <p style="font-size:30px"> Gregoriah Drawing by Kyle </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/gregbykyle.png" alt="Art">
+
+  <p style="font-size:30px; margin-bottom: 80px;">Kris and Pwops by Kris</p>
+  <video controls>
+    <source src="images/krisandpwopsvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="margin-bottom: 80px"></p>
+
+  <p style="font-size:30px">  Nicholas Drawing by Sal </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/nicholasheartbynich.png" alt="Art">
+
+  <p style="font-size:30px"> Kris and Kyle Drawing by Kyle </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/pwopsandkrisbykyle.png" alt="Art">
+
+  <p style="font-size:30px"> Pwops Drawing by Kyle </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/pwopsportraitbykyle.png" alt="Art">
+
+  <p style="font-size:30px"> Pwops Drawing by Kyle </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/pwopsbykyle.png" alt="Art">
+
+  <p style="font-size:30px">  Minie Drawing by Kyle  </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/minierealisbykyle.png" alt="Art">
+
+  <p style="font-size:30px; margin-bottom: 80px;">Gregoriah and his wife Video by Kyle</p>
+  <video controls>
+    <source src="images/gregwifevideobykyle.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="margin-bottom: 80px"></p>
+
+  <p style="font-size:30px">  Omid Drawing by Kyle  </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/duckybykyle.png" alt="Art">
+
+  <p style="font-size:30px">  Minie Drawing by Kyle  </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/minieportraitbykyle.png" alt="Art">
+
+  <p style="font-size:30px">  Pwops and Kris Drawing by Kris  </p>  
+  <img style="max-width: 600px; margin-bottom: 80px;" src="images/pwopsandkrisbykris.png" alt="Art">
+
+</div>
+
+<div id="tutorialsContent" class="media-section">
+  <h2 style="font-size:50px">Tutorials</h2>
+  <hr style="border: none; height: 2px; background-color: white; width: 100%; margin: 20px auto;">
+  <div class="tutorial-container">
+    <a href="tutorial/tutworldedit.pdf" class="pdf-link" target="_blank" rel="noopener noreferrer">
+      Guide on how to use World Edit
+    </a>
+    <div class="tutorial-description">
+      This is a quick guide on how to use world edit in our server.
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.media-section');
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    const active = document.getElementById(id);
+    if (active) {
+      active.style.display = 'block';
+    }
+  }
+</script>
+
+<img src="images/mcarrowup.png" id="backToTop" alt="Back to top" />
+
+
+<script>
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+
+
+<div id="grass-container"></div>
+<script>
+  document.addEventListener("scroll", () => {
+    const container = document.getElementById("grass-container");
+
+    const block = document.createElement("div");
+    block.classList.add("grass-block");
+
+    const size = Math.random() * 30 + 20;
+    block.style.width = `${size}px`;
+    block.style.height = `${size}px`;
+
+    const left = Math.random() * window.innerWidth;
+    block.style.left = `${left}px`;
+
+    const duration = Math.random() * 2 + 3;
+    block.style.animationDuration = `${duration}s`;
+
+    container.appendChild(block);
+
+    setTimeout(() => {
+      block.remove();
+    }, duration * 1000);
+  });
+</script>
+
+</body>
