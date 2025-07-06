@@ -1,1 +1,1 @@
-Official bot for the Pilleur SMP.
+Pilleur SMP.
